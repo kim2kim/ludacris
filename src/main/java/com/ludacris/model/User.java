@@ -27,7 +27,7 @@ import java.util.Set;
  *         by David Carter david@carter.net
  */
 @Entity
-@Table(name = "app_user")
+@Table(name = "user")
 @Searchable
 public class User extends BaseObject implements Serializable, UserDetails {
     private static final long serialVersionUID = 3832626162173359411L;
@@ -43,13 +43,13 @@ public class User extends BaseObject implements Serializable, UserDetails {
     private String phoneNumber;
     private String website;
     private Address address = new Address();
-    private Integer version;
+    //private Integer version;
     private Set<Role> roles = new HashSet<Role>();
     private boolean enabled;
     private boolean accountExpired;
     private boolean accountLocked;
     private boolean credentialsExpired;
-
+    
     /**
      * Default constructor - creates a new instance with no values set.
      */
@@ -185,10 +185,12 @@ public class User extends BaseObject implements Serializable, UserDetails {
         return roles.toArray(new GrantedAuthority[0]);
     }
 
+    /*
     @Version
     public Integer getVersion() {
         return version;
     }
+    */
 
     @Column(name = "account_enabled")
     public boolean isEnabled() {
@@ -282,9 +284,11 @@ public class User extends BaseObject implements Serializable, UserDetails {
         this.roles = roles;
     }
 
+    /*
     public void setVersion(Integer version) {
         this.version = version;
     }
+    */
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
@@ -301,8 +305,8 @@ public class User extends BaseObject implements Serializable, UserDetails {
     public void setCredentialsExpired(boolean credentialsExpired) {
         this.credentialsExpired = credentialsExpired;
     }
-
-    /**
+    
+	/**
      * {@inheritDoc}
      */
     public boolean equals(Object o) {
