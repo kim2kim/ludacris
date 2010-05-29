@@ -17,6 +17,8 @@
 
     <!-- Activates @Autowired for Controllers -->
     <context:annotation-config/>
+    
+    <context:component-scan base-package="com.ludacris.webapp.controller"/>
 
     <bean id="filenameController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
 
@@ -98,4 +100,72 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    
+    
+    
+    
+        <!-- ==================== Handler Mappings ==================== -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+        <description>Use the @RequestMapping defined in Controller beans</description>
+        <property name="order" value="2"/>
+        <property name="lazyInitHandlers" value="true"/>
+        <property name="interceptors" ref="interceptorChain"/>
+    </bean>
+
+    <bean id="viewMappings" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <description>
+                Catch unmapped request and attempt to resolve a view using convention.
+                Used for example for /index.action and  /config/index.action
+        </description>
+        <property name="order" value="3"/>
+        <property name="defaultHandler">
+            <bean class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+        </property>
+        <property name="interceptors" ref="interceptorChain"/>
+    </bean>
+
+    <bean id="interceptorChain" class="java.util.ArrayList">
+        <description>Applies an interceptor chain to each mapped HTTP request</description>
+        <constructor-arg type="java.util.Collection">
+            <list>
+                <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
+                <bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- ==================== Handlers ==================== -->
+
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="cacheSeconds" value="0" />
+		<property name="webBindingInitializer">
+			<bean
+				class="com.ludacris.webapp.controller.WebBindingInitializer" />
+		</property>
+	</bean>
+
+    <!-- ====================  Misc ==================== -->
+
+    <bean id="nameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <description>Maps a logical view name to a View instance configured as a Spring bean</description>
+        <property name="order" value="1"/>
+    </bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <description>Enables locale resolution with the help of a browser cookie</description>
+        <property name="defaultLocale" value="en"/>
+        <property name="cookieMaxAge" value="2592000"/><!-- In seconds (1 month)-->
+    </bean>
+
+    <bean id="themeResolver" class="org.springframework.web.servlet.theme.CookieThemeResolver">
+        <description>Enables theme resolution with the help of a browser cookie</description>
+        <property name="defaultThemeName" value="theme-white"/>
+        <property name="cookieMaxAge" value="2592000"/><!-- In seconds (1 month)-->
+    </bean>
+
 </beans>

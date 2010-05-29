@@ -108,6 +108,9 @@
                 <appfuse:country name="address.country" prompt="" default="${user.address.country}"/>
                 <p><appfuse:label key="user.address.country"/></p>
             </div>
+            <div>
+                <p><input type="checkbox" name="roleName" value="ROLE_PARENT" id="roleName" /><appfuse:label key="over.eighteen.label"/></p>
+            </div>            
         </div>
     </li>
     <li class="buttonBar bottom">

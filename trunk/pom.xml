@@ -101,6 +101,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <!-- 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>dbunit-maven-plugin</artifactId>
@@ -126,7 +127,6 @@
                         </goals>
                     </execution>
                     <execution>
-                        <!-- Runs before integration tests and jetty:run-war -->
                         <id>test</id>
                         <phase>test</phase>
                         <goals>
@@ -142,6 +142,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            -->
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>maven-jetty-plugin</artifactId>
@@ -710,6 +711,7 @@
                             </execution>
                         </executions>
                     </plugin>
+                    <!--  
                     <plugin>
                         <artifactId>maven-antrun-plugin</artifactId>
                         <version>1.3</version>
@@ -719,10 +721,8 @@
                                     <classpath refid="maven.test.classpath" />
                                 </taskdef>
                                 <mkdir dir="target/webtest-data" />
-                                <!-- Delete old results file if it exists -->
                                 <delete file="target/webtest-data/web-tests-result.xml" />
-                                <!-- This is so the default will be used if no test case is specified -->
-                                <property name="test" value="run-all-tests" />
+                                 <property name="test" value="run-all-tests" />
                                 <property name="i18n.classpath" value="${basedir}/target/classes" />
                                 <echo level="info">Testing '${project.build.finalName}' with locale '${user.language}'</echo>
                                 <ant antfile="src/test/resources/web-tests.xml" target="${test}">
@@ -749,6 +749,7 @@
                             </dependency>
                         </dependencies>
                     </plugin>
+                    -->
                 </plugins>
             </build>
         </profile>
@@ -913,7 +914,7 @@
 
         <!-- Database settings -->
         <dbunit.dataTypeFactoryName>org.dbunit.ext.mysql.MySqlDataTypeFactory</dbunit.dataTypeFactoryName>
-        <dbunit.operation.type>CLEAN_INSERT</dbunit.operation.type>
+        <!-- dbunit.operation.type>CLEAN_INSERT</dbunit.operation.type-->
         <hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
         <jdbc.groupId>mysql</jdbc.groupId>
         <jdbc.artifactId>mysql-connector-java</jdbc.artifactId>
