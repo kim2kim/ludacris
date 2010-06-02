@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class ShoppingCart {
+public class ShoppingCart extends BaseController{
 
 	@RequestMapping("/shopingcart.html")
 	public String cart(HttpServletRequest request,
