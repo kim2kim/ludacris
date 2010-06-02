@@ -6,7 +6,36 @@
         <pattern>/struts/dojo/*</pattern> 
         <pattern>/resources/*</pattern>
     </excludes> 
+    
+    <!--  For signup url -->
     <decorator name="default" page="default.jsp">
         <pattern>/*</pattern>
     </decorator>
+    
+ 
+    <decorator name="store" page="store.jsp">
+        <pattern>/store/*</pattern>
+    </decorator>    
+
+	<!-- For login url
+    <decorator name="default" page="ajax.jsp">
+        <pattern>/login.jsp</pattern>
+    </decorator>  
+
+    <decorator name="default" page="teachers.jsp">
+        <pattern>/teacher/*</pattern>
+    </decorator> 
+    
+    <decorator name="default" page="parents.jsp">
+        <pattern>/parent/*</pattern>
+    </decorator> 
+
+    <decorator name="default" page="child.jsp">
+        <pattern>/child/*</pattern>
+    </decorator> 
+    
+    <decorator name="default" page="default.jsp">
+        <pattern>/signup.html</pattern>
+    </decorator>    
+     -->  
 </decorators>

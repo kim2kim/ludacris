@@ -5,6 +5,12 @@
     </Displayers>
     <Menus>
         <Menu name="MainMenu" title="mainMenu.title" page="/mainMenu.html" roles="ROLE_PARENT,ROLE_ADMIN,ROLE_USER"/>
+        <Menu name="HomeMenu" title="home" page="/home.jsp" roles="ROLE_PARENT,ROLE_ADMIN,ROLE_USER"/>
+        <Menu name="MusicMenu" title="music" page="/music.jsp" roles="ROLE_PARENT,ROLE_ADMIN,ROLE_USER"/>
+        <Menu name="GamesMenu" title="games" page="/games.jsp" roles="ROLE_PARENT,ROLE_ADMIN,ROLE_USER"/>
+        <Menu name="ParentsTeachersMenu" title="parentsteachers" page="/parentsteachers.jsp" roles="ROLE_PARENT,ROLE_ADMIN,ROLE_USER"/>
+        <Menu name="GiftMenu" title="giftstore" page="/giftstore.jsp" roles="ROLE_PARENT,ROLE_ADMIN,ROLE_USER"/>
+
         <Menu name="ParentMenu" title="menu.parent" description="Paernt Menu" page="/parent/page1.html" roles="ROLE_ADMIN,ROLE_PARENT"/>
         <Menu name="UserMenu" title="menu.user" description="Child Menu" page="/child/page1.html" roles="ROLE_ADMIN,ROLE_PARENT,ROLE_USER"/>
         <Menu name="AdminMenu" title="menu.admin" description="Admin Menu" roles="ROLE_ADMIN" width="120" page="/admin/users.html">
