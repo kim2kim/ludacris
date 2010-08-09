@@ -7,6 +7,8 @@ import java.util.Locale;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
+import org.springframework.beans.propertyeditors.CustomBooleanEditor;
+
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;

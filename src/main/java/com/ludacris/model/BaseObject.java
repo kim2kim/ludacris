@@ -56,7 +56,9 @@ public abstract class BaseObject implements Serializable {
 	 * 
 	 * @return a String representation of this class.
 	 */
-	public abstract String toString();
+	public String toString(){
+		return this.toString();
+	}
 
 	/**
 	 * Compares object equality. When using Hibernate, the primary key should

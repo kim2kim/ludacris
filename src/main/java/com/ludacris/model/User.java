@@ -50,6 +50,9 @@ public class User extends BaseObject implements Serializable, UserDetails {
     private boolean accountLocked;
     private boolean credentialsExpired;
     
+    // @UserType
+    private String userType;
+   
     /**
      * Default constructor - creates a new instance with no values set.
      */
@@ -137,6 +140,15 @@ public class User extends BaseObject implements Serializable, UserDetails {
     public Address getAddress() {
         return address;
     }
+    
+    @Column(name = "user_type")
+    public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -197,7 +209,7 @@ public class User extends BaseObject implements Serializable, UserDetails {
         return enabled;
     }
 
-    @Column(name = "account_expired", nullable = false)
+	@Column(name = "account_expired", nullable = false)
     public boolean isAccountExpired() {
         return accountExpired;
     }
