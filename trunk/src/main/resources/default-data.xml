@@ -20,4 +20,65 @@
             <value description="description"><![CDATA[Parent role for all Users]]></value>
         </row>                   
     </table>
+    <table name="game">
+        <column>id</column>
+        <column>flash_link</column>
+        <column>title</column>
+        <column>description</column>
+        <row>
+            <value description="id">1</value>
+            <value description="flash_link">http://somelinktoflash1.com</value>
+            <value description="title">Game 1</value>
+            <value description="description"><![CDATA[Some description of game 1]]></value>
+        </row>
+        <row>
+            <value description="id">2</value>
+            <value description="flash_link">http://somelinktoflash2.com</value>
+            <value description="title">Game 2</value>
+            <value description="description"><![CDATA[Some description of game 1]]></value>
+        </row>      
+        <row>
+            <value description="id">3</value>
+            <value description="flash_link">http://somelinktoflash3.com</value>
+            <value description="title">Game 3</value>
+            <value description="description"><![CDATA[Some description of game 1]]></value>
+        </row>                   
+    </table>    
+    <table name="product">
+        <column>id</column>
+        <column>amazon_id</column>
+        <column>title</column>
+        <column>sku</column>
+        <column>price</column>
+        <column>headline</column>
+        <column>description</column>
+        <column>photo</column>
+        <column>category</column>
+        <column>subcategory</column>
+        <column>lyrics</column>
+        <row>
+            <value description="id">1</value>
+            <value description="amazon_id">SKU-11221</value>
+            <value description="title">prod 1</value>
+            <value description="sku">SKU-333</value>
+            <value description="price">32.00</value>
+            <value description="headline">Test</value>
+            <value description="description"><![CDATA[Some description of prod 1]]></value>
+            <value description="photo">http://someimageofproduct.com</value>
+            <value description="category">DOWNLOADABLE</value>
+            <value description="subcategory">MUSIC</value>
+        </row>
+        <row>
+            <value description="id">2</value>
+            <value description="amazon_id">SKU-22221</value>
+            <value description="title">prod 2</value>
+            <value description="sku">SKU-444</value>
+            <value description="price">32.00</value>
+            <value description="headline">Test</value>
+            <value description="description"><![CDATA[Some description of prod 1]]></value>
+            <value description="photo">http://someimageofproduct.com</value>
+            <value description="category">TOYS</value>
+            <value description="subcategory">NONE</value>
+        </row>
+    </table>
 </dataset>
