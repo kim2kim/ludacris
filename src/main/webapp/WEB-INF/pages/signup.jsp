@@ -77,11 +77,6 @@
         </div>
     </li>
     <li>
-        <appfuse:label styleClass="desc" key="user.website"/>
-        <form:errors path="website" cssClass="fieldError"/>
-        <form:input path="website" id="website" cssClass="text large" cssErrorClass="text large error"/>
-    </li>
-    <li>
         <label class="desc"><fmt:message key="user.address.address"/></label>
         <div class="group">
             <div>
@@ -108,6 +103,15 @@
                 <appfuse:country name="address.country" prompt="" default="${user.address.country}"/>
                 <p><appfuse:label key="user.address.country"/></p>
             </div>
+            <div>
+                <form:input path="user.dob" id="user.dob" cssClass="text medium" cssErrorClass="text medium error"/>
+                <form:errors path="user.dob" cssClass="fieldError"/>
+                <p><appfuse:label key="user.dob"/></p>
+            </div>   
+             <div>
+                <p><input type="radio" name="user.gender" value="MALE" id="male" /><appfuse:label key="user.gender.male"/></p>
+                <p><input type="radio" name="user.gender" value="FEMALE" id="female" /><appfuse:label key="user.gender.female"/></p>
+            </div>                      
             <div>
                 <p><input type="radio" name="user.userType" value="TEACHER" id="userType" /><appfuse:label key="teacher.user.type"/></p>
                 <p><input type="radio" name="user.userType" value="PARENT" id="userType" /><appfuse:label key="parent.user.type"/></p>
