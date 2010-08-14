@@ -18,7 +18,7 @@ import org.compass.annotations.SearchableProperty;
  */
 @Embeddable
 @Searchable(root = false)
-public class Address extends BaseObject implements Serializable {
+public class Address implements Serializable {
     private static final long serialVersionUID = 3617859655330969141L;
     private String address;
     private String city;

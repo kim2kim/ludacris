@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
 /**
@@ -15,6 +16,7 @@ import javax.persistence.Version;
  * 
  * @author <a href="mailto:matt@raibledesigns.com">Matt Raible</a>
  */
+@MappedSuperclass
 public abstract class BaseObject implements Serializable {
 
 	@Id

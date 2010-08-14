@@ -1,6 +1,6 @@
 package com.ludacris.webapp.controller;
 
-import java.util.List;
+import java.util.Date;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -65,6 +65,7 @@ public class SignupController extends BaseFormController {
 			if (role == null) {
 				role = new Role();
 				role.setDescription("");
+				role.setCreatedOn(new Date());
 				role.setName(roleName);
 				role = roleManager.save(role);
 			}

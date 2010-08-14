@@ -1,21 +1,28 @@
 package com.ludacris.model;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
-import org.compass.annotations.Searchable;
-import org.compass.annotations.SearchableComponent;
-import org.compass.annotations.SearchableId;
-import org.compass.annotations.SearchableProperty;
-import org.springframework.security.GrantedAuthority;
-import org.springframework.security.userdetails.UserDetails;
-
-import javax.persistence.*;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+import org.compass.annotations.Searchable;
+import org.compass.annotations.SearchableComponent;
+import org.compass.annotations.SearchableProperty;
+import org.springframework.security.GrantedAuthority;
+import org.springframework.security.userdetails.UserDetails;
 
 /**
  * This class represents the basic "user" object in AppFuse that allows for authentication
@@ -32,7 +39,7 @@ import java.util.Set;
 public class User extends BaseObject implements Serializable, UserDetails {
     private static final long serialVersionUID = 3832626162173359411L;
 
-    private Long id;
+    //private Long id;
     private String username;                    // required
     private String password;                    // required
     private String confirmPassword;
@@ -44,7 +51,7 @@ public class User extends BaseObject implements Serializable, UserDetails {
     private String website;
     private Address address = new Address();
     //private Integer version;
-    private Set<Role> roles = new HashSet<Role>();
+    private HashSet<Role> roles = new HashSet<Role>();
     private boolean enabled;
     private boolean accountExpired;
     private boolean accountLocked;
@@ -68,12 +75,14 @@ public class User extends BaseObject implements Serializable, UserDetails {
         this.username = username;
     }
 
+    /*
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @SearchableId
     public Long getId() {
         return id;
     }
+    */
 
     @Column(nullable = false, length = 50, unique = true)
     @SearchableProperty
@@ -248,9 +257,11 @@ public class User extends BaseObject implements Serializable, UserDetails {
         return !credentialsExpired;
     }
 
+    /*
     public void setId(Long id) {
         this.id = id;
     }
+    */
 
     public void setUsername(String username) {
         this.username = username;
@@ -292,7 +303,7 @@ public class User extends BaseObject implements Serializable, UserDetails {
         this.address = address;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(HashSet<Role> roles) {
         this.roles = roles;
     }
 
