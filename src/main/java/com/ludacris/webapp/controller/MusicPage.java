@@ -19,7 +19,7 @@ public class MusicPage extends BaseController {
 	@Autowired
 	private ProductManager productManager;
 	
-	@RequestMapping("/music/home.htm")
+	@RequestMapping("/music/home.do")
 	public String home(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		String category = request.getParameter("category");
@@ -40,7 +40,7 @@ public class MusicPage extends BaseController {
 		return "music/home";
 	}
 	
-	@RequestMapping("/music/song.htm")
+	@RequestMapping("/music/song.do")
 	public String song(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		String songId = request.getParameter("songId");

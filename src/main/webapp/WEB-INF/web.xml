@@ -155,13 +155,14 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
+    <!--  
     <filter-mapping>
         <filter-name>staticFilter</filter-name>
         <url-pattern>*.html</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
-
+	-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
@@ -213,10 +214,10 @@
     </servlet-mapping>
     
     <!-- Dispatching handled by StaticFilter -->
-    <!--<servlet-mapping>
+    <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>*.html</url-pattern>
-    </servlet-mapping>-->
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
 
     <session-config>
         <session-timeout>10</session-timeout>

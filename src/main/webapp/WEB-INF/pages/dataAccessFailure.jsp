@@ -16,4 +16,4 @@
 %>
 -->
 
-<a href="mainMenu.html" onclick="history.back();return false">&#171; Back</a>
+<a href="mainMenu.do" onclick="history.back();return false">&#171; Back</a>
