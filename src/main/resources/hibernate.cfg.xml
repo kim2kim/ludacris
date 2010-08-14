@@ -5,5 +5,8 @@
     <session-factory>
         <mapping class="com.ludacris.model.User"/>
         <mapping class="com.ludacris.model.Role"/>
+        <mapping class="com.ludacris.model.Product"/>
+        <mapping class="com.ludacris.model.Game"/>
+        <mapping class="com.ludacris.model.Purchase"/>
     </session-factory>
 </hibernate-configuration>

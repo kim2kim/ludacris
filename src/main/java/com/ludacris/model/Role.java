@@ -34,7 +34,7 @@ import org.apache.commons.lang.builder.ToStringStyle;
 })
 public class Role extends BaseObject implements Serializable, GrantedAuthority {
     private static final long serialVersionUID = 3690197650654049848L;
-    private Long id;
+    //private Long id;
     private String name;
     private String description;
 
@@ -53,11 +53,13 @@ public class Role extends BaseObject implements Serializable, GrantedAuthority {
         this.name = name;
     }
 
+    /*
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
+    */
 
     /**
      * @return the name property (getAuthority required by Acegi's GrantedAuthority interface)
@@ -78,9 +80,11 @@ public class Role extends BaseObject implements Serializable, GrantedAuthority {
         return this.description;
     }
 
+    /*
     public void setId(Long id) {
         this.id = id;
     }
+    */
 
     public void setName(String name) {
         this.name = name;
