@@ -39,6 +39,10 @@ public class Product extends BaseObject {
 	
 	@Column(name = "lyrics")
 	private String lyrics;
+	
+	public Product(){
+		super();
+	}
 
 	public String getAmazonId() {
 		return amazonId;

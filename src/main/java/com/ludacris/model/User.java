@@ -64,6 +64,7 @@ public class User extends BaseObject implements Serializable, UserDetails {
      * Default constructor - creates a new instance with no values set.
      */
     public User() {
+    	super();
     }
 
     /**

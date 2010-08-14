@@ -42,6 +42,7 @@ public class Role extends BaseObject implements Serializable, GrantedAuthority {
      * Default constructor - creates a new instance with no values set.
      */
     public Role() {
+    	super();
     }
 
     /**

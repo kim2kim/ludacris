@@ -13,6 +13,10 @@ public class Purchase extends BaseObject {
 	
 	@ManyToOne
 	private User user;
+	
+	public Purchase(){
+		super();
+	}
 
 	public Product getProduct() {
 		return product;
