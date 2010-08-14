@@ -24,7 +24,7 @@
 
     <bean id="fileUploadController" class="com.ludacris.webapp.controller.FileUploadController">
         <property name="validator" ref="beanValidator"/>
-        <property name="cancelView" value="redirect:mainMenu.html"/>
+        <property name="cancelView" value="redirect:mainMenu.do"/>
         <property name="formView" value="uploadForm"/>
         <property name="successView" value="uploadDisplay"/>
     </bean>
@@ -41,7 +41,7 @@
     <bean id="signupController" class="com.ludacris.webapp.controller.SignupController">
         <property name="validator" ref="beanValidator"/>
         <property name="formView" value="signup"/>
-        <property name="successView" value="redirect:mainMenu.html"/>
+        <property name="successView" value="redirect:mainMenu.do"/>
         <property name="userManager" ref="userManager"/>
         <property name="roleManager" ref="roleManager"/>
         <property name="mailEngine" ref="mailEngine"/>
@@ -56,8 +56,8 @@
     <bean id="userFormController" class="com.ludacris.webapp.controller.UserFormController">
         <property name="validator" ref="beanValidator"/>
         <property name="formView" value="userForm"/>
-        <property name="successView" value="redirect:users.html"/>
-        <property name="cancelView" value="redirect:mainMenu.html"/>
+        <property name="successView" value="redirect:users.do"/>
+        <property name="cancelView" value="redirect:mainMenu.do"/>
         <property name="userManager" ref="userManager"/>
         <property name="roleManager" ref="roleManager"/>
         <property name="mailEngine" ref="mailEngine"/>
@@ -79,11 +79,11 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <value>
-                /admin/activeUsers.html=filenameController
-                /admin/reload.html=reloadController
-                /admin/users.html=userController
-                /mainMenu.html=filenameController
-                /passwordHint.html=passwordHintController
+                /admin/activeUsers.do=filenameController
+                /admin/reload.do=reloadController
+                /admin/users.do=userController
+                /mainMenu.do=filenameController
+                /passwordHint.do=passwordHintController
             </value>
         </property>
         <property name="order" value="0"/>

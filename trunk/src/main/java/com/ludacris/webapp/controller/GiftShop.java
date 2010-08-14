@@ -19,7 +19,7 @@ public class GiftShop extends BaseController {
 	@Autowired
 	private ProductManager productManager;
 	
-	@RequestMapping("/giftshop/home.htm")
+	@RequestMapping("/giftshop/home.do")
 	public String home(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		request.setAttribute("musics", productManager.findAllProductByCategory(Category.MUSIC.name(), 0));
@@ -29,7 +29,7 @@ public class GiftShop extends BaseController {
 		return "shop/home";
 	}
 	
-	@RequestMapping("/giftshop/product.htm")
+	@RequestMapping("/giftshop/product.do")
 	public String product(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
@@ -45,7 +45,7 @@ public class GiftShop extends BaseController {
 		return "shop/product";
 	}
 	
-	@RequestMapping("/giftshop/subcategory.htm")
+	@RequestMapping("/giftshop/subcategory.do")
 	public String subcategory(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		String category = request.getParameter("category");
@@ -72,7 +72,7 @@ public class GiftShop extends BaseController {
 		return "shop/subcategory";
 	}
 	
-	@RequestMapping("/giftshop/category.htm")
+	@RequestMapping("/giftshop/category.do")
 	public String category(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		String category = request.getParameter("category");

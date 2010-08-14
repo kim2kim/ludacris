@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ShoppingCart extends BaseController{
 
-	@RequestMapping("/shopingcart.html")
+	@RequestMapping("/shopingcart.do")
 	public String cart(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		return "cart";
