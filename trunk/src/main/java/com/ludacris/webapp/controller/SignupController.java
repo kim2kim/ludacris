@@ -61,14 +61,6 @@ public class SignupController extends BaseFormController {
 			}
 
 			Role role = roleManager.getRole(roleName);
-
-			if (role == null) {
-				role = new Role();
-				role.setDescription("");
-				role.setCreatedOn(new Date());
-				role.setName(roleName);
-				role = roleManager.save(role);
-			}
 			user.addRole(role);
 
 			// Set the default user role on this new user

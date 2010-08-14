@@ -109,8 +109,10 @@
                 <p><appfuse:label key="user.address.country"/></p>
             </div>
             <div>
-                <p><input type="checkbox" name="roleName" value="ROLE_PARENT" id="roleName" /><appfuse:label key="over.eighteen.label"/></p>
-            </div>            
+                <p><input type="radio" name="user.userType" value="TEACHER" id="userType" /><appfuse:label key="teacher.user.type"/></p>
+                <p><input type="radio" name="user.userType" value="PARENT" id="userType" /><appfuse:label key="parent.user.type"/></p>
+                <p><input type="radio" name="user.userType" value="CHILD" id="userType" /><appfuse:label key="child.user.type"/></p>
+            </div>                         
         </div>
     </li>
     <li class="buttonBar bottom">
