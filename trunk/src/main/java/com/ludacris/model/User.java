@@ -2,6 +2,7 @@ package com.ludacris.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -48,7 +49,6 @@ public class User extends BaseObject implements Serializable, UserDetails {
     private String lastName;                    // required
     private String email;                       // required; unique
     private String phoneNumber;
-    private String website;
     private Address address = new Address();
     //private Integer version;
     private HashSet<Role> roles = new HashSet<Role>();
@@ -56,7 +56,8 @@ public class User extends BaseObject implements Serializable, UserDetails {
     private boolean accountExpired;
     private boolean accountLocked;
     private boolean credentialsExpired;
-    
+    private String gender;
+    private Date dob;
     // @UserType
     private String userType;
    
@@ -128,11 +129,6 @@ public class User extends BaseObject implements Serializable, UserDetails {
     @SearchableProperty
     public String getPhoneNumber() {
         return phoneNumber;
-    }
-
-    @SearchableProperty
-    public String getWebsite() {
-        return website;
     }
 
     /**
@@ -296,10 +292,6 @@ public class User extends BaseObject implements Serializable, UserDetails {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setWebsite(String website) {
-        this.website = website;
-    }
-
     public void setAddress(Address address) {
         this.address = address;
     }
@@ -330,6 +322,24 @@ public class User extends BaseObject implements Serializable, UserDetails {
         this.credentialsExpired = credentialsExpired;
     }
     
+    @Column(name = "gender")
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	@Column(name = "dob")
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
 	/**
      * {@inheritDoc}
      */
