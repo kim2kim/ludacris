@@ -14,6 +14,10 @@ public class Game extends BaseObject {
 	private String title;
 	
 	private String description;
+	
+	public Game(){
+		super();
+	}
 
 	public String getFlashLink() {
 		return flashLink;

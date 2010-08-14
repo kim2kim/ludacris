@@ -28,6 +28,10 @@ public abstract class BaseObject implements Serializable {
 
 	@Column(name = "created_on", nullable = false)
 	protected Date createdOn;
+	
+	public BaseObject(){
+		createdOn = new Date();
+	}
 
 	public Long getId() {
 		return id;
