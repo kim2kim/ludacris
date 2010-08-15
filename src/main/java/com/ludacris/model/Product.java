@@ -8,42 +8,42 @@ import javax.persistence.Table;
 @Table(name = "product")
 public class Product extends BaseObject {
 
-	@Column(name = "amazon_id")
 	private String amazonId;
-	
+
 	@Column(name = "title")
 	private String title;
-	
+
 	@Column(name = "sku")
 	private String sku;
-	
+
 	@Column(name = "price")
 	private String price;
-	
+
 	@Column(name = "description")
 	private String description;
-	
+
 	@Column(name = "headline")
 	private String headline;
-	
+
 	@Column(name = "photo")
 	private String photo;
-	
+
 	// downloadable
 	@Column(name = "category")
 	private String category;
-	
+
 	// music
 	@Column(name = "subcategory")
 	private String subcategory;
-	
+
 	@Column(name = "lyrics")
 	private String lyrics;
-	
-	public Product(){
+
+	public Product() {
 		super();
 	}
 
+	@Column(name = "amazon_id")
 	public String getAmazonId() {
 		return amazonId;
 	}
@@ -52,6 +52,7 @@ public class Product extends BaseObject {
 		this.amazonId = amazonId;
 	}
 
+	@Column(name = "title")
 	public String getTitle() {
 		return title;
 	}
@@ -60,6 +61,7 @@ public class Product extends BaseObject {
 		this.title = title;
 	}
 
+	@Column(name = "sku")
 	public String getSku() {
 		return sku;
 	}
@@ -68,6 +70,7 @@ public class Product extends BaseObject {
 		this.sku = sku;
 	}
 
+	@Column(name = "price")
 	public String getPrice() {
 		return price;
 	}
@@ -76,6 +79,7 @@ public class Product extends BaseObject {
 		this.price = price;
 	}
 
+	@Column(name = "description")
 	public String getDescription() {
 		return description;
 	}
@@ -84,6 +88,7 @@ public class Product extends BaseObject {
 		this.description = description;
 	}
 
+	@Column(name = "headline")
 	public String getHeadline() {
 		return headline;
 	}
@@ -92,6 +97,7 @@ public class Product extends BaseObject {
 		this.headline = headline;
 	}
 
+	@Column(name = "photo")
 	public String getPhoto() {
 		return photo;
 	}
@@ -100,6 +106,8 @@ public class Product extends BaseObject {
 		this.photo = photo;
 	}
 
+	// downloadable
+	@Column(name = "category")
 	public String getCategory() {
 		return category;
 	}
@@ -108,6 +116,8 @@ public class Product extends BaseObject {
 		this.category = category;
 	}
 
+	// music
+	@Column(name = "subcategory")
 	public String getSubcategory() {
 		return subcategory;
 	}
@@ -116,6 +126,7 @@ public class Product extends BaseObject {
 		this.subcategory = subcategory;
 	}
 
+	@Column(name = "lyrics")
 	public String getLyrics() {
 		return lyrics;
 	}

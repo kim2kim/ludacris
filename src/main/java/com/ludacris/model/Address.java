@@ -19,115 +19,105 @@ import org.compass.annotations.SearchableProperty;
 @Embeddable
 @Searchable(root = false)
 public class Address implements Serializable {
-	private static final long serialVersionUID = 3617859655330969141L;
+    private static final long serialVersionUID = 3617859655330969141L;
+    private String address;
+    private String city;
+    private String province;
+    private String country;
+    private String postalCode;
 
-	@Column(length = 150)
-	@SearchableProperty
-	private String address;
+    @Column(length=150)
+    @SearchableProperty
+    public String getAddress() {
+        return address;
+    }
 
-	@Column(length = 50)
-	@SearchableProperty
-	private String city;
+    @Column(length=50)
+    @SearchableProperty
+    public String getCity() {
+        return city;
+    }
 
-	@Column(length = 100)
-	@SearchableProperty
-	private String province;
+    @Column(length=100)
+    @SearchableProperty
+    public String getProvince() {
+        return province;
+    }
 
-	@Column(length = 100)
-	@SearchableProperty
-	private String country;
+    @Column(length=100)
+    @SearchableProperty
+    public String getCountry() {
+        return country;
+    }
 
-	@Column(name = "postal_code", length = 15)
-	@SearchableProperty
-	private String postalCode;
+    @Column(name="postal_code",length=15)
+    @SearchableProperty
+    public String getPostalCode() {
+        return postalCode;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public String getCity() {
-		return city;
-	}
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-	public String getProvince() {
-		return province;
-	}
+    public void setCountry(String country) {
+        this.country = country;
+    }
 
-	public String getCountry() {
-		return country;
-	}
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
 
-	public String getPostalCode() {
-		return postalCode;
-	}
+    public void setProvince(String province) {
+        this.province = province;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    /**
+     * Overridden equals method for object comparison. Compares based on hashCode.
+     * @param o Object to compare
+     * @return true/false based on hashCode
+     */
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Address)) {
+            return false;
+        }
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+        final Address address1 = (Address) o;
 
-	public void setCountry(String country) {
-		this.country = country;
-	}
+        return this.hashCode() == address1.hashCode();
+    }
 
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
-	}
+    /**
+     * Overridden hashCode method - compares on address, city, province, country and postal code.
+     * @return hashCode
+     */
+    public int hashCode() {
+        int result;
+        result = (address != null ? address.hashCode() : 0);
+        result = 29 * result + (city != null ? city.hashCode() : 0);
+        result = 29 * result + (province != null ? province.hashCode() : 0);
+        result = 29 * result + (country != null ? country.hashCode() : 0);
+        result = 29 * result + (postalCode != null ? postalCode.hashCode() : 0);
+        return result;
+    }
 
-	public void setProvince(String province) {
-		this.province = province;
-	}
-
-	/**
-	 * Overridden equals method for object comparison. Compares based on
-	 * hashCode.
-	 * 
-	 * @param o
-	 *            Object to compare
-	 * @return true/false based on hashCode
-	 */
-	public boolean equals(Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (!(o instanceof Address)) {
-			return false;
-		}
-
-		final Address address1 = (Address) o;
-
-		return this.hashCode() == address1.hashCode();
-	}
-
-	/**
-	 * Overridden hashCode method - compares on address, city, province, country
-	 * and postal code.
-	 * 
-	 * @return hashCode
-	 */
-	public int hashCode() {
-		int result;
-		result = (address != null ? address.hashCode() : 0);
-		result = 29 * result + (city != null ? city.hashCode() : 0);
-		result = 29 * result + (province != null ? province.hashCode() : 0);
-		result = 29 * result + (country != null ? country.hashCode() : 0);
-		result = 29 * result + (postalCode != null ? postalCode.hashCode() : 0);
-		return result;
-	}
-
-	/**
-	 * Returns a multi-line String with key=value pairs.
-	 * 
-	 * @return a String representation of this class.
-	 */
-	public String toString() {
-		return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
-				.append("country", this.country)
-				.append("address", this.address).append("province",
-						this.province).append("postalCode", this.postalCode)
-				.append("city", this.city).toString();
-	}
+    /**
+     * Returns a multi-line String with key=value pairs.
+     * @return a String representation of this class.
+     */
+    public String toString() {
+        return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
+                .append("country", this.country)
+                .append("address", this.address)
+                .append("province", this.province)
+                .append("postalCode", this.postalCode)
+                .append("city", this.city).toString();
+    }
 }

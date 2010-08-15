@@ -19,20 +19,18 @@ import javax.persistence.Version;
 @MappedSuperclass
 public abstract class BaseObject implements Serializable {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Long id;
 
-	@Version
 	protected Integer version;
 
-	@Column(name = "created_on", nullable = false)
 	protected Date createdOn;
-	
-	public BaseObject(){
+
+	public BaseObject() {
 		createdOn = new Date();
 	}
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -41,6 +39,7 @@ public abstract class BaseObject implements Serializable {
 		this.id = id;
 	}
 
+	@Version
 	public Integer getVersion() {
 		return version;
 	}
@@ -49,6 +48,7 @@ public abstract class BaseObject implements Serializable {
 		this.version = version;
 	}
 
+	@Column(name = "created_on", nullable = false)
 	public Date getCreatedOn() {
 		return createdOn;
 	}
@@ -62,7 +62,7 @@ public abstract class BaseObject implements Serializable {
 	 * 
 	 * @return a String representation of this class.
 	 */
-	public String toString(){
+	public String toString() {
 		return this.toString();
 	}
 

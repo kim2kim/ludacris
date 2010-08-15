@@ -26,13 +26,13 @@ import org.apache.commons.lang.builder.ToStringStyle;
 @Entity
 @Table(name = "role")
 @NamedQueries( { @NamedQuery(name = "findRoleByName", query = "select r from Role r where r.name = :name ") })
-public class Role extends BaseObject implements Serializable, GrantedAuthority {
+public class Role implements Serializable, GrantedAuthority {
 	private static final long serialVersionUID = 3690197650654049848L;
 
-	@Column(length = 20)
+	protected Long id;
+
 	private String name;
 
-	@Column(length = 64)
 	private String description;
 
 	/**
@@ -52,12 +52,15 @@ public class Role extends BaseObject implements Serializable, GrantedAuthority {
 		this.name = name;
 	}
 
-	/*
-	 * @Id
-	 * 
-	 * @GeneratedValue(strategy = GenerationType.AUTO) public Long getId() {
-	 * return id; }
-	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the name property (getAuthority required by Acegi's
@@ -69,10 +72,12 @@ public class Role extends BaseObject implements Serializable, GrantedAuthority {
 		return getName();
 	}
 
+	@Column(length = 20)
 	public String getName() {
 		return this.name;
 	}
 
+	@Column(length = 64)
 	public String getDescription() {
 		return this.description;
 	}
