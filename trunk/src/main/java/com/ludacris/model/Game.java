@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Table(name = "game")
 public class Game extends BaseObject {
 
-	@Column(name = "flash_link")
+	
 	private String flashLink;
 	
 	private String title;
@@ -19,6 +19,7 @@ public class Game extends BaseObject {
 		super();
 	}
 
+	@Column(name = "flash_link")
 	public String getFlashLink() {
 		return flashLink;
 	}
