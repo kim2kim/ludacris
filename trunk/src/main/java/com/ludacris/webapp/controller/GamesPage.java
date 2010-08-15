@@ -18,7 +18,7 @@ public class GamesPage extends BaseController {
 	@Autowired
 	private GameManager gamesManager;
 
-	@RequestMapping("/games/home.htm")
+	@RequestMapping("/games/home.do")
 	public String play(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		String gameId = request.getParameter("gameId");
@@ -33,7 +33,7 @@ public class GamesPage extends BaseController {
 		return "games/play";
 	}
 	
-	@RequestMapping("/games/gallery.htm")
+	@RequestMapping("/games/gallery.do")
 	public String gallery(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		String start = request.getParameter("start");

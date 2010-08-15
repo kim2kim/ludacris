@@ -104,8 +104,8 @@
                 <p><appfuse:label key="user.address.country"/></p>
             </div>
             <div>
-                <form:input path="user.dob" id="user.dob" cssClass="text medium" cssErrorClass="text medium error"/>
-                <form:errors path="user.dob" cssClass="fieldError"/>
+                <form:input path="dob" id="dob" cssClass="text medium" cssErrorClass="text medium error"/>
+                <form:errors path="dob" cssClass="fieldError"/>
                 <p><appfuse:label key="user.dob"/></p>
             </div>   
              <div>
