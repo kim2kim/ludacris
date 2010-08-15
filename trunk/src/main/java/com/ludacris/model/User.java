@@ -78,6 +78,8 @@ public class User extends BaseObject implements Serializable, UserDetails {
 	@Cascade(org.hibernate.annotations.CascadeType.REPLICATE)
 	@JoinTable(name = "user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<Role>();
+	
+	@Column(name = "account_enabled")
 	private boolean enabled;
 
 	@Column(name = "account_expired", nullable = false)
@@ -217,7 +219,7 @@ public class User extends BaseObject implements Serializable, UserDetails {
 	 * @Version public Integer getVersion() { return version; }
 	 */
 
-	@Column(name = "account_enabled")
+	
 	public boolean isEnabled() {
 		return enabled;
 	}
