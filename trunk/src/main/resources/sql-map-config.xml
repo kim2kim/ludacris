@@ -6,8 +6,4 @@
     <settings enhancementEnabled="true" maxTransactions="20"
         maxRequests="32" maxSessions="10"/>
 
-    <!-- Identify all SQL Map XML files to be loaded by this SQL map. Relative to classpath -->
-    <sqlMap resource="sqlmaps/LookupSQL.xml"/>
-    <sqlMap resource="sqlmaps/RoleSQL.xml"/>
-    <sqlMap resource="sqlmaps/UserSQL.xml"/>
 </sqlMapConfig>
