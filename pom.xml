@@ -79,7 +79,7 @@
                         </component>
                     </components>
                     <componentProperties>
-                        <drop>true</drop>
+                        <drop>false</drop>
                         <jdk5>true</jdk5>
                         <propertyfile>target/classes/jdbc.properties</propertyfile>
                         <skip>${skipTests}</skip>
@@ -672,7 +672,7 @@
             </activation>
             <build>
                 <plugins>
-                    <plugin>
+                <!--                  <plugin>
                         <groupId>org.codehaus.cargo</groupId>
                         <artifactId>cargo-maven2-plugin</artifactId>
                         <version>${cargo.version}</version>
@@ -711,6 +711,7 @@
                             </execution>
                         </executions>
                     </plugin>
+                    -->
                     <!--  
                     <plugin>
                         <artifactId>maven-antrun-plugin</artifactId>
