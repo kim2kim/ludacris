@@ -103,16 +103,19 @@
                 <appfuse:country name="address.country" prompt="" default="${user.address.country}"/>
                 <p><appfuse:label key="user.address.country"/></p>
             </div>
+            <hr/>
             <div>
+            	<p><appfuse:label key="user.dob"/></p>
                 <form:input path="dob" id="dob" cssClass="text medium" cssErrorClass="text medium error"/>
                 <form:errors path="dob" cssClass="fieldError"/>
-                <p><appfuse:label key="user.dob"/></p>
             </div>   
              <div>
+              	<p><appfuse:label key="user.gender"/></p>
                 <p><input type="radio" name="user.gender" value="MALE" id="male" /><appfuse:label key="user.gender.male"/></p>
                 <p><input type="radio" name="user.gender" value="FEMALE" id="female" /><appfuse:label key="user.gender.female"/></p>
             </div>                      
             <div>
+             	<p><appfuse:label key="user.role.type"/></p>
                 <p><input type="radio" name="user.userType" value="TEACHER" id="userType" /><appfuse:label key="teacher.user.type"/></p>
                 <p><input type="radio" name="user.userType" value="PARENT" id="userType" /><appfuse:label key="parent.user.type"/></p>
                 <p><input type="radio" name="user.userType" value="CHILD" id="userType" /><appfuse:label key="child.user.type"/></p>
