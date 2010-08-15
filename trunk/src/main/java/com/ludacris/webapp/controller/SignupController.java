@@ -48,21 +48,15 @@ public class SignupController extends BaseFormController {
 			log.debug("entering 'onSubmit' method...");
 		}
 
-		User user = (User) command;
-		Locale locale = request.getLocale();
+        User user = (User) command;
+        Locale locale = request.getLocale();
+        
+        user.setEnabled(true);
 
-		user.setEnabled(true);
+        // Set the default user role on this new user
+        user.addRole(roleManager.getRole(Constants.USER_ROLE));
 		
-		String roleName = request.getParameter("roleName");
-
 		try {
-			if(roleName == null || roleName.isEmpty() == true){
-				roleName = "ROLE_USER";
-			}
-
-			Role role = roleManager.getRole(roleName);
-			user.addRole(role);
-
 			// Set the default user role on this new user
 			// user.addRole(roleManager.getRole(Constants.USER_ROLE));
 
