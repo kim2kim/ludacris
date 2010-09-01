@@ -1,14 +1,15 @@
 <%@ include file="/common/taglibs.jsp"%>
 
-<c:if test="${pageContext.request.locale.language ne 'en'}">
-    <div id="switchLocale"><a href="<c:url value='/?locale=en'/>"><fmt:message key="webapp.name"/> in English</a></div>
-</c:if>
-
-<div id="branding">
-    <h1><a href="<c:url value='/'/>"><fmt:message key="webapp.name"/></a></h1>
-    <p><fmt:message key="webapp.tagline"/></p>
-</div>
-<hr />
-
-<%-- Put constants into request scope --%>
-<appfuse:constants scope="request"/>
+    <div class="top-nav">
+      <ul id="top-nav">
+            <li id="home"><a href="#">Home</a></li>
+        <li id="divider"><span>|</span></li>
+        <li id="music"><a href="#">Music</a></li>
+        <li id="divider"><span>|</span></li>
+        <li id="games"><a href="#">Games</a></li>
+            <li id="divider"><span>|</span></li>
+            <li id="parents-teachers"><a href="#">Parent &amp; Teachers</a></li>
+            <li id="divider"><span>|</span></li>
+            <li id="store"><a href="#">Store</a></li>
+      </ul>
+    </div>
